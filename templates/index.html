@@ -60,8 +60,13 @@
         }
         .result {
             margin-top: 20px;
+            margin-bottom: 20px;
             font-size: 24px;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
         .spam {
             color: #dc3545;
@@ -88,9 +93,9 @@
         {% if predictions is not none %}
             <div class="result {{ 'spam' if predictions == 1 else 'not-spam' }}">
                 {% if predictions == 1 %}
-                    <span class="emoji">⚠️</span> SPAM
+                    SPAM <span class="emoji">⚠️</span>
                 {% elif predictions == -1 %}
-                    <span class="emoji">✅</span> NOT SPAM
+                    NOT SPAM <span class="emoji">✅</span>
                 {% endif %}
             </div>
         {% endif %}
